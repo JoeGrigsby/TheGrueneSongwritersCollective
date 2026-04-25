@@ -194,7 +194,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
           <div>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Member · The Gruene Songwriters Collective</div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(32px, 5vw, 52px)', margin: '0 0 8px', lineHeight: 1.1 }}>{artist.name}</h1>
-            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>{artist.genre} · {artist.hometown}</div>
+            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>{artist.hometown}</div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {artist.tags.map(t => (
                 <span key={t} style={{ background: '#2d1a0a', border: '1px solid #3d2810', color: '#c8a45a', padding: '4px 12px', fontSize: '11px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase' }}>{t}</span>
