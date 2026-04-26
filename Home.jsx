@@ -167,7 +167,7 @@ const HomePage = ({ navigate, headlineFont }) => {
       <section style={{ background: '#f2ead8', padding: '80px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
           <div>
-            <div style={homeStyles.sectionLabel}>Upcoming Event</div>
+            <div style={homeStyles.sectionLabel}>Featured Event</div>
             <h2 style={{ ...homeStyles.sectionTitle, textAlign: 'left', fontSize: 'clamp(28px, 4vw, 48px)' }}>
               Texas Hill Country<br/>Spring House Concert
             </h2>
@@ -181,7 +181,7 @@ const HomePage = ({ navigate, headlineFont }) => {
             <p style={{ ...homeStyles.bodyText, textAlign: 'left', margin: '0 0 24px' }}>
               From the hills of Gruene to the shores of Canyon Lake, near the Guadalupe River, with bluebonnets and Indian paintbrush in bloom.
             </p>
-            <button onClick={() => navigate('events')} style={{ ...homeStyles.btnPrimary, background: '#8b2020' }}>Event Details & Tickets</button>
+            <button onClick={() => navigate('events', null, 'past-events')} style={{ ...homeStyles.btnPrimary, background: '#8b2020' }}>Event Recap</button>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img src="uploads/Gruene_Poster.jpg" alt="Spring House Concert Poster"
