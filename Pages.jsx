@@ -258,14 +258,38 @@ const MerchPage = () => {
         <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Official Merchandise</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>The Store</h1>
       </div>
-      <div style={{ maxWidth: '700px', margin: '0 auto', padding: '100px 32px', textAlign: 'center' }}>
-        <img src="uploads/logo_badge.png" alt="GSC" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', marginBottom: '32px', opacity: 0.6 }} />
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>Good Things Take Time</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(36px, 5vw, 56px)', margin: '0 0 16px' }}>Coming Soon</h2>
-        <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '0 auto 24px' }} />
-        <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: '19px', color: '#5a3a1a', lineHeight: 1.8 }}>
-          Official merchandise for The Gruene Songwriters Collective is on its way. Check back soon.
-        </p>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '72px 32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '48px', justifyItems: 'center' }}>
+          {/* Poster product card */}
+          <div style={{ background: '#fff', border: '1px solid #d4c4a8', maxWidth: '400px', width: '100%' }}>
+            <img
+              src="uploads/Gruene_Poster.jpg"
+              alt="2026 Texas Hill Country Spring House Concert Poster"
+              style={{ width: '100%', display: 'block' }}
+            />
+            <div style={{ padding: '28px' }}>
+              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>The Gruene Songwriters Collective</div>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '22px', margin: '0 0 16px', lineHeight: 1.3 }}>2026 Texas Hill Country Spring House Concert</h2>
+              <div style={{ width: '40px', height: '2px', background: '#8b2020', marginBottom: '16px' }} />
+              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#1a1208', fontSize: '24px', letterSpacing: '0.05em', marginBottom: '24px' }}>$35.00</div>
+              <a
+                href="https://amplifi.printify.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block', textAlign: 'center',
+                  background: '#8b2020', color: '#f2ead8',
+                  fontFamily: "'Oswald', sans-serif", fontSize: '13px',
+                  letterSpacing: '0.2em', textTransform: 'uppercase',
+                  padding: '14px 32px', textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+              >
+                Order Now
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
