@@ -170,7 +170,7 @@ const ArtistCard = ({ artist, onClick }) => {
 const ArtistBioPage = ({ artist, onBack }) => {
   React.useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '80px' }}>
+    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       {/* Back bar */}
       <div style={{ background: '#221508', padding: '16px 40px', borderBottom: '1px solid #3d2810' }}>
         <button onClick={onBack} style={{
@@ -261,7 +261,7 @@ const ArtistsPage = ({ navigate, selectedArtistSlug }) => {
   }
 
   return (
-    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '80px' }}>
+    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 32px' }}>
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>The Roster</div>
