@@ -219,7 +219,7 @@ const MusicPage = () => {
           <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 32px', textAlign: 'center' }}>The Artists</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {artists.map(a => {
-            const firstLink = a.links?.spotify || a.links?.apple || a.links?.bandcamp || a.links?.soundcloud || a.links?.youtube || a.website;
+            const firstLink = a.hideMusicLink ? null : (a.links?.spotify || a.links?.apple || a.links?.bandcamp || a.links?.soundcloud || a.links?.youtube || a.website);
             return (
               <div key={a.slug} style={{ background: '#1a1208', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '2px solid #c8a45a', background: '#2d1a0a', flexShrink: 0, overflow: 'hidden' }}>
