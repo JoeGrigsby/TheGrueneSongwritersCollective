@@ -69,6 +69,7 @@ const ARTIST_DATA = [
     photo: 'uploads/3955c5f1-a370-4349-b088-4003903d7bf5.png',
     bio: `Texas Hill Country songwriter blending outlaw country, southern gothic storytelling, and acoustic grit. Rowdy's songs explore loss, redemption, and restless roads, delivered with honest vocals and a voice shaped by a hard-earned life. His writing carries a rawness that can only come from someone who's lived every word.`,
     tags: ['Outlaw Country', 'Southern Gothic', 'Acoustic'],
+    featuredSong: 'Producer — 2026 Texas Hill Country Spring House Concert',
     website: null,
     links: {
       soundcloud: 'https://soundcloud.com/rowdymiller',
@@ -205,7 +206,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
         <div style={{ width: '100%', height: '1px', background: 'linear-gradient(to right, #c8a45a, transparent)', marginBottom: '40px' }} />
         {artist.featuredSong && (
           <div style={{ background: '#221508', border: '1px solid #c8a45a', padding: '16px 24px', marginBottom: '32px', fontFamily: "'Playfair Display', serif", color: '#c8a45a', fontSize: '18px', fontStyle: 'italic' }}>
-            Featured Song: {artist.featuredSong}
+            {artist.featuredSong}
           </div>
         )}
         <p style={{ fontSize: '20px', lineHeight: 1.9, color: '#d4c4a8', fontFamily: "'Crimson Pro', Georgia, serif", margin: '0 0 40px' }}>{artist.bio}</p>

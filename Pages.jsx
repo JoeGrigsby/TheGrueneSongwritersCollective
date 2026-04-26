@@ -63,6 +63,7 @@ const PAST_EVENTS = [
     date: 'Saturday, March 28, 2026', time: '6:00 PM',
     location: 'Canyon Lake, Texas', sublocation: 'Near the Guadalupe River',
     hostedBy: 'Andy Rackley & Lucas Duda',
+    producedBy: 'Rowdy Miller',
     headliners: ['Wesley Hanna', 'Chris Welch'],
     supporting: ['Jack Angel', 'John Gurnot', 'Nathan Young', 'Rowdy Miller', 'Jack Brandt', 'Todd Johnson', 'Katie Markus', 'Dana Snyder'],
     description: 'The Gruene Songwriters Collective presents an intimate house concert in the heart of the Texas Hill Country. With bluebonnets and Indian paintbrush in bloom along River Road, this evening of original music is one you won\'t forget.',
@@ -156,10 +157,16 @@ const EventsPage = ({ navigate }) => {
                   <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Headlined by</div>
                   <div style={{ color: '#8b6540', fontFamily: "'Playfair Display', serif", fontSize: '16px' }}>{evt.headliners.join(' ★ ')}</div>
                 </div>
-                <div>
+                <div style={{ marginBottom: '12px' }}>
                   <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Also Performed</div>
                   <div style={{ color: '#5a3a1a', fontSize: '14px', fontFamily: "'Crimson Pro', Georgia, serif", lineHeight: 1.8 }}>{evt.supporting.join(' · ')}</div>
                 </div>
+                {evt.producedBy && (
+                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #3d2810' }}>
+                    <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Produced by</div>
+                    <div style={{ color: '#8b6540', fontSize: '15px', fontFamily: "'Playfair Display', serif" }}>{evt.producedBy}</div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -186,7 +193,25 @@ const MusicPage = () => {
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Music</h1>
       </div>
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 32px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+        {/* Featured Music */}
+        <div style={{ marginBottom: '64px' }}>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Watch</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 32px', textAlign: 'center' }}>Featured Music</h2>
+          <div style={{ position: 'relative', paddingTop: '56.25%', background: '#1a1208', boxShadow: '8px 8px 32px rgba(0,0,0,0.25)' }}>
+            <iframe
+              src="https://www.youtube.com/embed/MaiZnVxY3xI"
+              title="Featured Music"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+            />
+          </div>
+        </div>
+        {/* The Artists */}
+        <div>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Find Your Favorite</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 32px', textAlign: 'center' }}>The Artists</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {artists.map(a => {
             const firstLink = a.links?.spotify || a.links?.apple || a.links?.bandcamp || a.links?.soundcloud || a.links?.youtube || a.website;
             return (
@@ -209,6 +234,7 @@ const MusicPage = () => {
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </div>
@@ -226,68 +252,20 @@ const MERCH_ITEMS = [
 ];
 
 const MerchPage = () => {
-  const [cart, setCart] = React.useState([]);
-  const [added, setAdded] = React.useState(null);
-
-  const addToCart = (item) => {
-    setCart(c => {
-      const existing = c.find(i => i.id === item.id);
-      if (existing) return c.map(i => i.id === item.id ? { ...i, qty: i.qty + 1 } : i);
-      return [...c, { ...item, qty: 1 }];
-    });
-    setAdded(item.id);
-    setTimeout(() => setAdded(null), 1500);
-  };
-
-  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-
   return (
     <div style={{ background: '#f2ead8', minHeight: '100vh', paddingTop: '80px' }}>
       <div style={{ background: '#1a1208', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
         <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Official Merchandise</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>The Store</h1>
       </div>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 32px' }}>
-        {cart.length > 0 && (
-          <div style={{ background: '#1a1208', border: '1px solid #c8a45a', padding: '16px 24px', marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-            <div style={{ color: '#f2ead8', fontFamily: "'Crimson Pro', serif", fontSize: '16px' }}>🛒 &nbsp;{cart.reduce((s, i) => s + i.qty, 0)} item(s) in cart · <strong style={{ color: '#c8a45a' }}>${total}</strong></div>
-            <button style={{ background: '#c8a45a', color: '#1a1208', border: 'none', padding: '10px 24px', fontFamily: "'Oswald', sans-serif", fontSize: '13px', letterSpacing: '0.15em', textTransform: 'uppercase', cursor: 'pointer' }}>Checkout</button>
-          </div>
-        )}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px' }}>
-          {MERCH_ITEMS.map(item => (
-            <div key={item.id} style={{ background: '#fff', border: '1px solid #ddd4c0', overflow: 'hidden' }}>
-              {/* Product image */}
-              <div style={{ height: '260px', background: '#1a1208', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-                {item.img ? (
-                  <img src={item.img} alt={item.name} style={{ width: '100%', height: '100%', objectFit: item.id === 3 ? 'contain' : 'cover', padding: item.id === 3 ? '20px' : '0' }} />
-                ) : (
-                  <div style={{ textAlign: 'center', color: '#3d2810', padding: '24px' }}>
-                    <div style={{ fontSize: '48px', marginBottom: '8px', opacity: 0.3 }}>♪</div>
-                    <div style={{ fontFamily: 'monospace', fontSize: '11px', color: '#5a3a1a', opacity: 0.5 }}>{item.tag} placeholder</div>
-                  </div>
-                )}
-                {item.badge && <div style={{ position: 'absolute', top: '12px', right: '12px', background: '#8b2020', color: '#f2ead8', padding: '4px 10px', fontFamily: "'Oswald', sans-serif", fontSize: '11px', letterSpacing: '0.15em' }}>{item.badge}</div>}
-                <div style={{ position: 'absolute', bottom: '12px', left: '12px', background: '#1a1208cc', color: '#c8a45a', padding: '3px 10px', fontFamily: "'Oswald', sans-serif", fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{item.tag}</div>
-              </div>
-              {/* Product info */}
-              <div style={{ padding: '20px' }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '18px', marginBottom: '6px' }}>{item.name}</div>
-                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '20px', marginBottom: '10px' }}>${item.price}</div>
-                <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: '14px', color: '#5a3a1a', lineHeight: 1.6, margin: '0 0 16px' }}>{item.description}</p>
-                <button onClick={() => addToCart(item)} style={{
-                  width: '100%', background: added === item.id ? '#8b2020' : '#1a1208',
-                  color: '#f2ead8', border: 'none', padding: '12px',
-                  fontFamily: "'Oswald', sans-serif", fontSize: '13px',
-                  letterSpacing: '0.2em', textTransform: 'uppercase', cursor: 'pointer',
-                  transition: 'background 0.3s',
-                }}>
-                  {added === item.id ? '✓ Added!' : 'Add to Cart'}
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div style={{ maxWidth: '700px', margin: '0 auto', padding: '100px 32px', textAlign: 'center' }}>
+        <img src="uploads/logo_badge.png" alt="GSC" style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover', marginBottom: '32px', opacity: 0.6 }} />
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>Good Things Take Time</div>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(36px, 5vw, 56px)', margin: '0 0 16px' }}>Coming Soon</h2>
+        <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '0 auto 24px' }} />
+        <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: '19px', color: '#5a3a1a', lineHeight: 1.8 }}>
+          Official merchandise for The Gruene Songwriters Collective is on its way. Check back soon.
+        </p>
       </div>
     </div>
   );
