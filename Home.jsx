@@ -179,7 +179,7 @@ const HomePage = ({ navigate, headlineFont }) => {
               6 O'CLOCK IN THE EVENING · CANYON LAKE, TEXAS
             </div>
             <p style={{ ...homeStyles.bodyText, textAlign: 'left', margin: '0 0 24px' }}>
-              From the hills of Gruene to the shores of Canyon Lake, near the Guadalupe River — bluebonnets and Indian paintbrush in bloom.
+              From the hills of Gruene to the shores of Canyon Lake, near the Guadalupe River, with bluebonnets and Indian paintbrush in bloom.
             </p>
             <button onClick={() => navigate('events')} style={{ ...homeStyles.btnPrimary, background: '#8b2020' }}>Event Details & Tickets</button>
           </div>

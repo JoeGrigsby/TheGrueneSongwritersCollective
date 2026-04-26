@@ -14,12 +14,12 @@ const StoryPage = () => {
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
         <div style={pagesStyles.pullQuote}>
-          "From the hills of Gruene to the shores of Canyon Lake — where songs are built one story at a time."
+          "From the hills of Gruene to the shores of Canyon Lake, where songs are built one story at a time."
         </div>
         <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '40px 0' }} />
         <h2 style={pagesStyles.h2}>Summer of 2025</h2>
         <p style={pagesStyles.body}>
-          The Gruene Songwriters Collective formed in the summer of '25, when a mix of aspiring and seasoned writers gathered for a three-day workshop in Gruene, Texas. Led by acclaimed songwriters <strong>Jason Eady</strong> and <strong>Adam Hood</strong>, the experience helped shape both our craft and the community we've built together.
+          The Gruene Songwriters Collective formed in the summer of '25, when a mix of aspiring and seasoned writers gathered for a three-day workshop in Gruene, Texas. Led by acclaimed songwriters <a href="https://www.jasoneady.com/" target="_blank" rel="noopener noreferrer" style={{color:'#8b2020'}}>Jason Eady</a> and <a href="https://www.adamhood.com/" target="_blank" rel="noopener noreferrer" style={{color:'#8b2020'}}>Adam Hood</a>, the experience helped shape both our craft and the community we've built together.
         </p>
         <p style={pagesStyles.body}>
           What none of us expected was how much the place itself would matter. Gruene — with its legendary dance hall, its cypress-shaded river bends, its unhurried pace — has a way of pulling the truth out of a song. You can't fake it there.
@@ -57,7 +57,7 @@ const StoryPage = () => {
 };
 
 // ── EVENTS ─────────────────────────────────────────────────
-const EVENTS = [
+const PAST_EVENTS = [
   {
     id: 1, title: 'Texas Hill Country Spring House Concert',
     date: 'Saturday, March 28, 2026', time: '6:00 PM',
@@ -72,49 +72,104 @@ const EVENTS = [
   },
 ];
 
-const EventsPage = () => {
+const UPCOMING_EVENTS = [
+  {
+    id: 2,
+    artist: 'Chris Welch',
+    photo: 'uploads/ef534480-5491-4254-b1a1-8aa650ad3c71.png',
+    date: 'Thursday, April 30, 2026',
+    time: '7:00 PM',
+    venue: "Papa Dubi's",
+    location: 'Albertville, AL',
+  },
+  {
+    id: 3,
+    artist: 'Wesley Hanna',
+    photo: 'uploads/wesley_hanna.png',
+    date: 'Thursday, May 7, 2026',
+    time: '',
+    venue: 'Dosey Doe - The Big Barn',
+    location: 'The Woodlands, TX',
+  },
+];
+
+const EventsPage = ({ navigate }) => {
   return (
     <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '80px' }}>
       <div style={{ background: '#221508', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
         <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Live Music</div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Upcoming Shows</h1>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Shows</h1>
       </div>
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 32px' }}>
-        {EVENTS.map(evt => (
-          <div key={evt.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '48px', alignItems: 'start', marginBottom: '80px' }}>
-            <div>
-              <img src={evt.poster} alt={evt.title}
-                style={{ width: '100%', boxShadow: '6px 6px 24px rgba(0,0,0,0.5)', border: '3px solid #3d2810' }} />
-            </div>
-            <div>
-              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Featured Event</div>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(24px, 3.5vw, 40px)', margin: '0 0 16px', lineHeight: 1.2 }}>{evt.title}</h2>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
-                {evt.tags.map(t => <span key={t} style={{ background: '#2d1a0a', border: '1px solid #3d2810', color: '#c8a45a', padding: '4px 12px', fontSize: '11px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.15em' }}>{t}</span>)}
+
+        {/* Upcoming Events */}
+        <div style={{ marginBottom: '72px' }}>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>On the Calendar</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(28px, 4vw, 48px)', margin: '0 0 32px', borderBottom: '1px solid #3d2810', paddingBottom: '24px' }}>Upcoming Shows</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {UPCOMING_EVENTS.map(evt => (
+              <div key={evt.id} style={{ background: '#221508', border: '1px solid #3d2810', padding: '24px 28px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '50%', border: '2px solid #c8a45a', background: '#2d1a0a', flexShrink: 0, overflow: 'hidden' }}>
+                  {evt.photo
+                    ? <img src={evt.photo} alt={evt.artist} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c8a45a', fontFamily: "'Playfair Display', serif", fontSize: '20px', fontWeight: 700 }}>{evt.artist[0]}</div>
+                  }
+                </div>
+                <div style={{ flex: 1, minWidth: '200px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '22px', marginBottom: '4px' }}>{evt.artist}</div>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.1em' }}>
+                    {evt.date}{evt.time ? ` · ${evt.time}` : ''}
+                  </div>
+                </div>
+                <div style={{ textAlign: 'right', minWidth: '160px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '16px' }}>{evt.venue}</div>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.1em', marginTop: '2px' }}>{evt.location}</div>
+                </div>
               </div>
-              <div style={{ borderLeft: '3px solid #8b2020', paddingLeft: '20px', marginBottom: '24px' }}>
-                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '16px', letterSpacing: '0.1em', marginBottom: '4px' }}>{evt.date} · {evt.time}</div>
-                <div style={{ color: '#f2ead8', fontSize: '18px', fontFamily: "'Playfair Display', serif" }}>{evt.location}</div>
-                <div style={{ color: '#8b6540', fontSize: '14px', fontStyle: 'italic' }}>{evt.sublocation}</div>
-              </div>
-              <p style={{ color: '#d4c4a8', fontSize: '16px', lineHeight: 1.8, fontFamily: "'Crimson Pro', Georgia, serif", marginBottom: '20px' }}>{evt.description}</p>
-              <div style={{ marginBottom: '20px' }}>
-                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '6px' }}>Headlining</div>
-                <div style={{ color: '#f2ead8', fontFamily: "'Playfair Display', serif", fontSize: '18px' }}>{evt.headliners.join(' ★ ')}</div>
-              </div>
-              <div style={{ marginBottom: '24px' }}>
-                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '6px' }}>Also Performing</div>
-                <div style={{ color: '#d4c4a8', fontSize: '15px', fontFamily: "'Crimson Pro', Georgia, serif", lineHeight: 1.8 }}>{evt.supporting.join(' · ')}</div>
-              </div>
-              <div style={{ background: '#221508', border: '1px solid #c8a45a', padding: '16px 20px', marginBottom: '24px', fontSize: '14px', color: '#c8a45a', fontFamily: "'Crimson Pro', Georgia, serif", fontStyle: 'italic' }}>{evt.donateInfo}</div>
-              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.15em' }}>HOSTED BY {evt.hostedBy.toUpperCase()}</div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Past Events */}
+        <div style={{ marginBottom: '72px' }}>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>In the Books</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(28px, 4vw, 48px)', margin: '0 0 32px', borderBottom: '1px solid #3d2810', paddingBottom: '24px' }}>Past Events</h2>
+          {PAST_EVENTS.map(evt => (
+            <div key={evt.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '48px', alignItems: 'start', marginBottom: '48px' }}>
+              <div>
+                <img src={evt.poster} alt={evt.title}
+                  style={{ width: '100%', boxShadow: '6px 6px 24px rgba(0,0,0,0.5)', border: '3px solid #3d2810' }} />
+              </div>
+              <div>
+                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Past Event</div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(22px, 3vw, 36px)', margin: '0 0 16px', lineHeight: 1.2 }}>{evt.title}</h3>
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
+                  {evt.tags.map(t => <span key={t} style={{ background: '#2d1a0a', border: '1px solid #3d2810', color: '#8b6540', padding: '4px 12px', fontSize: '11px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.15em' }}>{t}</span>)}
+                </div>
+                <div style={{ borderLeft: '3px solid #3d2810', paddingLeft: '20px', marginBottom: '24px' }}>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '15px', letterSpacing: '0.1em', marginBottom: '4px' }}>{evt.date} · {evt.time}</div>
+                  <div style={{ color: '#d4c4a8', fontSize: '17px', fontFamily: "'Playfair Display', serif" }}>{evt.location}</div>
+                  <div style={{ color: '#5a3a1a', fontSize: '14px', fontStyle: 'italic' }}>{evt.sublocation}</div>
+                </div>
+                <p style={{ color: '#8b6540', fontSize: '15px', lineHeight: 1.8, fontFamily: "'Crimson Pro', Georgia, serif", marginBottom: '20px' }}>{evt.description}</p>
+                <div style={{ marginBottom: '12px' }}>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Headlined by</div>
+                  <div style={{ color: '#8b6540', fontFamily: "'Playfair Display', serif", fontSize: '16px' }}>{evt.headliners.join(' ★ ')}</div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Also Performed</div>
+                  <div style={{ color: '#5a3a1a', fontSize: '14px', fontFamily: "'Crimson Pro', Georgia, serif", lineHeight: 1.8 }}>{evt.supporting.join(' · ')}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Booking CTA */}
         <div style={{ background: '#221508', border: '1px solid #3d2810', padding: '40px', textAlign: 'center' }}>
           <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '22px', marginBottom: '8px' }}>Want to Book the Collective?</div>
           <p style={{ color: '#8b6540', fontFamily: "'Crimson Pro', Georgia, serif", fontSize: '16px', margin: '0 0 20px' }}>Available for private events, house concerts, festivals, and more.</p>
-          <a href="#contact" style={{ background: '#c8a45a', color: '#1a1208', padding: '12px 28px', fontFamily: "'Oswald', sans-serif", fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', textDecoration: 'none', display: 'inline-block' }}>Inquire About Booking</a>
+          <button onClick={() => navigate('contact')} style={{ background: '#c8a45a', color: '#1a1208', border: 'none', padding: '12px 28px', fontFamily: "'Oswald', sans-serif", fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', cursor: 'pointer' }}>Inquire About Booking</button>
         </div>
       </div>
     </div>
@@ -131,33 +186,17 @@ const MusicPage = () => {
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Music</h1>
       </div>
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 32px' }}>
-        <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: '20px', color: '#3d2b1a', lineHeight: 1.8, textAlign: 'center', marginBottom: '60px' }}>
-          Find the music of the Gruene Songwriters Collective on all major platforms. Each artist brings their own sound — explore below.
-        </p>
-        {/* Platform links */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '60px' }}>
-          {[['Spotify', '#1DB954', 'Stream on Spotify'], ['Apple Music', '#fa243c', 'Listen on Apple Music'], ['Bandcamp', '#1da0c3', 'Buy on Bandcamp'], ['YouTube Music', '#FF0000', 'Watch on YouTube'], ['Amazon Music', '#00a8e0', 'Stream on Amazon'], ['SoundCloud', '#ff5500', 'Listen on SoundCloud']].map(([name, color, label]) => (
-            <a key={name} href="#" style={{
-              background: '#1a1208', border: `1px solid ${color}60`,
-              color: '#f2ead8', padding: '20px 16px', textAlign: 'center',
-              textDecoration: 'none', display: 'block',
-              fontFamily: "'Oswald', sans-serif", fontSize: '13px',
-              letterSpacing: '0.15em', textTransform: 'uppercase',
-              transition: 'border-color 0.2s, background 0.2s',
-            }}>
-              <div style={{ color: color, fontSize: '22px', marginBottom: '8px' }}>♫</div>
-              {label}
-            </a>
-          ))}
-        </div>
-        {/* Per-artist music */}
-        <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '32px', marginBottom: '32px', textAlign: 'center' }}>Find Your Favorite Artist</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {artists.map(a => {
             const firstLink = a.links?.spotify || a.links?.apple || a.links?.bandcamp || a.links?.soundcloud || a.links?.youtube || a.website;
             return (
               <div key={a.slug} style={{ background: '#1a1208', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '2px solid #c8a45a', background: '#2d1a0a', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c8a45a', fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700, flexShrink: 0 }}>{a.initials}</div>
+                <div style={{ width: '50px', height: '50px', borderRadius: '50%', border: '2px solid #c8a45a', background: '#2d1a0a', flexShrink: 0, overflow: 'hidden' }}>
+                  {a.photo
+                    ? <img src={a.photo} alt={a.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c8a45a', fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700 }}>{a.initials}</div>
+                  }
+                </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ color: '#f2ead8', fontFamily: "'Playfair Display', serif", fontSize: '16px', marginBottom: '4px' }}>{a.name}</div>
                   <div style={{ color: '#8b6540', fontSize: '12px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>{a.genre}</div>
@@ -261,7 +300,11 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'contact', ...form }).toString(),
+    }).then(() => setSent(true)).catch(() => setSent(true));
   };
 
   return (
@@ -278,7 +321,8 @@ const ContactPage = () => {
             <p style={{ color: '#d4c4a8', fontFamily: "'Crimson Pro', serif", fontSize: '18px' }}>We'll be in touch soon. Thank you for reaching out to the Gruene Songwriters Collective.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form name="contact" data-netlify="true" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
             {[['Name', 'name', 'text', 'Your full name'], ['Email', 'email', 'email', 'your@email.com']].map(([label, key, type, placeholder]) => (
               <div key={key} style={{ marginBottom: '20px' }}>
                 <label style={{ display: 'block', fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '8px' }}>{label}</label>

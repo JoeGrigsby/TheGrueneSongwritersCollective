@@ -5,7 +5,7 @@ const ARTIST_DATA = [
     name: 'Wesley Hanna', slug: 'wesley-hanna', initials: 'WH', genre: 'Neo-Traditional Country',
     hometown: 'Fort Worth, TX',
     photo: 'uploads/wesley_hanna.png',
-    bio: `Independent country singer-songwriter from Fort Worth, Texas. Roughneck, oilfield engineer, and showman — Wesley's real-world experience as a working man informs every line he writes. He regularly plays in legendary Texas dancehalls, blending neo-traditional country, Western Swing, and local flair. His songwriting reflects his lifelong Texan experiences, delivered with an authenticity that's hard-earned and impossible to fake.`,
+    bio: `Independent country singer-songwriter from Fort Worth, Texas. Roughneck, oilfield engineer, and showman. Wesley's real-world experience as a working man informs every line he writes. He regularly plays in legendary Texas dancehalls, blending neo-traditional country, Western Swing, and local flair. His songwriting reflects his lifelong Texan experiences, delivered with an authenticity that's hard-earned and impossible to fake.`,
     tags: ['Neo-Traditional Country', 'Western Swing', 'Texas Dancehall'],
     website: 'https://wesleyhannamusic.com',
     links: {
@@ -20,7 +20,7 @@ const ARTIST_DATA = [
     name: 'Chris Welch', slug: 'chris-welch', initials: 'CW', genre: 'Americana / Roots',
     hometown: 'Jackson, MO',
     photo: 'uploads/ef534480-5491-4254-b1a1-8aa650ad3c71.png',
-    bio: `Road-tested singer-songwriter whose music is driven by story, simplicity, and truth. Steeped in the storytelling traditions of Americana and roots country, his writing reflects a life shaped by travel, time, and reflection. He explores themes of restlessness, resilience, and the quiet moments in between — delivered with a voice that feels familiar and sincere.`,
+    bio: `Road-tested singer-songwriter whose music is driven by story, simplicity, and truth. Steeped in the storytelling traditions of Americana and roots country, his writing reflects a life shaped by travel, time, and reflection. He explores themes of restlessness, resilience, and the quiet moments in between, delivered with a voice that feels familiar and sincere.`,
     tags: ['Americana', 'Roots Country', 'Storytelling'],
     website: 'https://chriswelchmusic.com/home',
     links: {
@@ -67,7 +67,7 @@ const ARTIST_DATA = [
     name: 'Rowdy Miller', slug: 'rowdy-miller', initials: 'RM', genre: 'Outlaw / Southern Gothic',
     hometown: 'Canyon Lake, TX',
     photo: 'uploads/3955c5f1-a370-4349-b088-4003903d7bf5.png',
-    bio: `Texas Hill Country songwriter blending outlaw country, southern gothic storytelling, and acoustic grit. Rowdy's songs explore loss, redemption, and restless roads — delivered with honest vocals and a voice shaped by a hard-earned life. His writing carries a rawness that can only come from someone who's lived every word.`,
+    bio: `Texas Hill Country songwriter blending outlaw country, southern gothic storytelling, and acoustic grit. Rowdy's songs explore loss, redemption, and restless roads, delivered with honest vocals and a voice shaped by a hard-earned life. His writing carries a rawness that can only come from someone who's lived every word.`,
     tags: ['Outlaw Country', 'Southern Gothic', 'Acoustic'],
     website: null,
     links: {
@@ -78,7 +78,7 @@ const ARTIST_DATA = [
     name: 'Jack Brandt', slug: 'jack-brandt', initials: 'JB', genre: 'Country / Americana',
     hometown: 'Houston, TX',
     photo: 'uploads/7ed29f46-0596-4218-b610-d3c8093b94c7.png',
-    bio: `Country and Americana songs rooted in strong melodies, honest emotion, and a deep respect for craft. Jack's songs draw from country traditions but are grounded in the guitar work. His lyric videos and Apple Music credits reflect a writer building a real body of work — one voice and one story at a time.`,
+    bio: `Country and Americana songs rooted in strong melodies, honest emotion, and a deep respect for craft. Jack's songs draw from country traditions but are grounded in the guitar work. His lyric videos and Apple Music credits reflect a writer building a real body of work, one voice and one story at a time.`,
     tags: ['Country', 'Americana', 'Guitar-Driven'],
     website: null,
     links: {
