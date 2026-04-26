@@ -159,10 +159,17 @@
         return () => window.removeEventListener('scroll', onScroll);
       }, []);
 
-      const navigate = (targetPage, slug = null) => {
+      const navigate = (targetPage, slug = null, anchor = null) => {
         setPage(targetPage);
         setArtistSlug(slug);
-        window.scrollTo(0, 0);
+        if (anchor) {
+          setTimeout(() => {
+            const el = document.getElementById(anchor);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        } else {
+          window.scrollTo(0, 0);
+        }
       };
 
       const { HomePage, StoryPage, ArtistsPage, EventsPage, MusicPage, MerchPage, ContactPage } = window;

@@ -132,7 +132,7 @@ const EventsPage = ({ navigate }) => {
         </div>
 
         {/* Past Events */}
-        <div style={{ marginBottom: '72px' }}>
+        <div id="past-events" style={{ marginBottom: '72px' }}>
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>In the Books</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(28px, 4vw, 48px)', margin: '0 0 32px', borderBottom: '1px solid #3d2810', paddingBottom: '24px' }}>Past Events</h2>
           {PAST_EVENTS.map(evt => (
