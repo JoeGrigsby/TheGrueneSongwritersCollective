@@ -81,6 +81,7 @@ const UPCOMING_EVENTS = [
     date: 'Thursday, April 30, 2026',
     time: '7:00 PM',
     venue: "Papa Dubi's",
+    venueUrl: 'https://chriswelchmusic.com/shows',
     location: 'Albertville, AL',
   },
   {
@@ -90,6 +91,7 @@ const UPCOMING_EVENTS = [
     date: 'Thursday, May 7, 2026',
     time: '',
     venue: 'Dosey Doe - The Big Barn',
+    venueUrl: 'https://wesleyhannamusic.com/',
     location: 'The Woodlands, TX',
   },
 ];
@@ -123,7 +125,11 @@ const EventsPage = ({ navigate }) => {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right', minWidth: '160px' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '16px' }}>{evt.venue}</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '16px' }}>
+                    {evt.venueUrl
+                      ? <a href={evt.venueUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#f2ead8', textDecoration: 'underline', textDecorationColor: '#c8a45a' }}>{evt.venue}</a>
+                      : evt.venue}
+                  </div>
                   <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.1em', marginTop: '2px' }}>{evt.location}</div>
                 </div>
               </div>

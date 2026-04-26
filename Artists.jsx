@@ -60,7 +60,7 @@ const ARTIST_DATA = [
     tags: ['Folk', 'Country', 'Storytelling'],
     website: null,
     links: {
-      instagram: 'https://www.instagram.com/nathanjyoungmusic/',
+      instagram: 'https://www.instagram.com/nathan_young_music/',
     },
   },
   {
@@ -73,6 +73,7 @@ const ARTIST_DATA = [
     website: null,
     links: {
       soundcloud: 'https://soundcloud.com/rowdymiller',
+      instagram: 'https://www.instagram.com/andreisimo/',
     },
   },
   {
@@ -83,7 +84,6 @@ const ARTIST_DATA = [
     tags: ['Country', 'Americana', 'Guitar-Driven'],
     website: null,
     links: {
-      apple: 'https://music.apple.com/us/album/the-human-experience/1860654982',
       youtube: 'https://www.youtube.com/channel/UC-czQzYgM5oSEv6wpAKl7rQ',
       instagram: 'https://www.instagram.com/jackbrandtmusic/',
     },
@@ -95,15 +95,8 @@ const ARTIST_DATA = [
     photo: 'uploads/bf61bdd0-8be1-41dc-9e6e-86ae9d814b15.png',
     bio: `Americana folk singer-songwriter from the Texas Hill Country. Todd's playing and writing style is inspired by the great singer-songwriter legends — Guy Clark, Robert Earl Keen, John Prine, and Jason Isbell. His songs carry that same spirit of place, plainspoken truth, and deep humanity that defines the best of the form.`,
     tags: ['Americana', 'Folk', 'Singer-Songwriter'],
-    website: 'https://www.toddjohnsonartist.com/',
-    links: {
-      spotify: 'https://open.spotify.com/artist/7LrkpOjbAfAn3j0nZQEyBC',
-      apple: 'https://music.apple.com/us/artist/todd-johnson-the-revolvers/1152977556',
-      youtube: 'https://www.youtube.com/user/toddjohnsonband',
-      instagram: 'https://www.instagram.com/realtoddjohnson/',
-      facebook: 'https://www.facebook.com/toddjohnsonartist/',
-      contact: 'https://toddjohnsonartist.com/epk',
-    },
+    website: null,
+    links: {},
   },
   {
     name: 'Katie Markus', slug: 'katie-markus', initials: 'KM', genre: 'Indie Americana',
@@ -124,9 +117,6 @@ const ARTIST_DATA = [
     tags: ['Folk', 'Pop', 'Nashville'],
     website: null,
     links: {
-      spotify: 'https://open.spotify.com/artist/40Y2i2VQDROPEshfbqJYqL',
-      soundcloud: 'https://soundcloud.com/nashvilledana',
-      youtube: 'https://m.youtube.com/watch?v=R-BhV6Nagv8',
       instagram: 'https://www.instagram.com/nashvilledana/',
     },
   },
