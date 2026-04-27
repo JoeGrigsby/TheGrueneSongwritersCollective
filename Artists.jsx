@@ -62,6 +62,7 @@ const ARTIST_DATA = [
     links: {
       instagram: 'https://www.instagram.com/nathan_young_music/',
     },
+    songLog: 'uploads/songlist.png',
   },
   {
     name: 'Rowdy Miller', slug: 'rowdy-miller', initials: 'RM', genre: 'Outlaw / Southern Gothic',
@@ -235,6 +236,13 @@ const ArtistBioPage = ({ artist, onBack }) => {
         )}
         {!artist.website && Object.keys(artist.links).length === 0 && (
           <p style={{ color: '#5a3a1a', fontStyle: 'italic', fontSize: '15px' }}>Links coming soon.</p>
+        )}
+        {artist.songLog && (
+          <div style={{ marginTop: '48px' }}>
+            <div style={{ width: '100%', height: '1px', background: 'linear-gradient(to right, #c8a45a, transparent)', marginBottom: '32px' }} />
+            <h3 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '24px', margin: '0 0 24px' }}>Song Log</h3>
+            <img src={artist.songLog} alt="Song Log" style={{ width: '100%', maxWidth: '600px', display: 'block' }} />
+          </div>
         )}
       </div>
     </div>
