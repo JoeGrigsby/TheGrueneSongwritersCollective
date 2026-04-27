@@ -153,17 +153,8 @@ const EventsPage = ({ navigate }) => {
                   <div style={{ color: '#d4c4a8', fontSize: '17px', fontFamily: "'Playfair Display', serif" }}>{evt.location}</div>
                   <div style={{ color: '#5a3a1a', fontSize: '14px', fontStyle: 'italic' }}>{evt.sublocation}</div>
                 </div>
-                <p style={{ color: '#8b6540', fontSize: '15px', lineHeight: 1.8, fontFamily: "'Crimson Pro', Georgia, serif", marginBottom: '20px' }}>{evt.description}</p>
-                <div style={{ marginBottom: '12px' }}>
-                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Headlined by</div>
-                  <div style={{ color: '#8b6540', fontFamily: "'Playfair Display', serif", fontSize: '16px' }}>{evt.headliners.join(' ★ ')}</div>
-                </div>
-                <div style={{ marginBottom: '12px' }}>
-                  <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Also Performed</div>
-                  <div style={{ color: '#5a3a1a', fontSize: '14px', fontFamily: "'Crimson Pro', Georgia, serif", lineHeight: 1.8 }}>{evt.supporting.join(' · ')}</div>
-                </div>
                 {evt.producedBy && (
-                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #3d2810' }}>
+                  <div style={{ paddingTop: '16px' }}>
                     <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '4px' }}>Produced by</div>
                     <div style={{ color: '#8b6540', fontSize: '15px', fontFamily: "'Playfair Display', serif" }}>{evt.producedBy}</div>
                   </div>
