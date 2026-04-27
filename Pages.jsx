@@ -58,7 +58,7 @@ const PAST_EVENTS = [
     date: 'Saturday, March 28, 2026', time: '6:00 PM',
     location: 'Canyon Lake, Texas', sublocation: 'Near the Guadalupe River',
     hostedBy: 'Andy Rackley & Lucas Duda',
-    producedBy: 'Rowdy Miller',
+    producedBy: 'Andy Rackley',
     headliners: ['Wesley Hanna', 'Chris Welch'],
     supporting: ['Jack Angel', 'John Gurnot', 'Nathan Young', 'Rowdy Miller', 'Jack Brandt', 'Todd Johnson', 'Katie Markus', 'Dana Snyder'],
     description: 'The Gruene Songwriters Collective presents an intimate house concert in the heart of the Texas Hill Country. With bluebonnets and Indian paintbrush in bloom along River Road, this evening of original music is one you won\'t forget.',
@@ -269,7 +269,6 @@ const MerchPage = () => {
             <div key={item.title} style={{ background: '#fff', border: '1px solid #d4c4a8' }}>
               <img src={item.img} alt={item.alt} style={{ width: '100%', display: 'block', aspectRatio: '1 / 1', objectFit: 'cover' }} />
               <div style={{ padding: '24px' }}>
-                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>The Gruene Songwriters Collective</div>
                 <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '18px', margin: '0 0 12px', lineHeight: 1.3 }}>{item.title}</h2>
                 <div style={{ width: '40px', height: '2px', background: '#8b2020', marginBottom: '12px' }} />
                 <div style={{ fontFamily: "'Oswald', sans-serif", color: '#1a1208', fontSize: '22px', letterSpacing: '0.05em', marginBottom: '20px' }}>{item.price}</div>
@@ -285,7 +284,7 @@ const MerchPage = () => {
                     padding: '12px 24px', textDecoration: 'none',
                   }}
                 >
-                  Order Now
+                  More Details
                 </a>
               </div>
             </div>
