@@ -77,7 +77,7 @@ const ARTIST_DATA = [
     },
   },
   {
-    name: 'Jack Brandt', slug: 'jack-brandt', initials: 'JB', genre: 'Country / Americana',
+    name: 'Jack Brandt', slug: 'jack-brandt', initials: 'JB', genre: 'Country / Americana', hideMusicLink: true,
     hometown: 'Houston, TX',
     photo: 'uploads/7ed29f46-0596-4218-b610-d3c8093b94c7.png',
     bio: `Country and Americana songs rooted in strong melodies, honest emotion, and a deep respect for craft. Jack's songs draw from country traditions but are grounded in the guitar work. His lyric videos and Apple Music credits reflect a writer building a real body of work, one voice and one story at a time.`,
