@@ -22,23 +22,18 @@ const StoryPage = () => {
           The Gruene Songwriters Collective formed in the summer of '25, when a mix of aspiring and seasoned writers gathered for a three-day workshop in Gruene, Texas. Led by acclaimed songwriters <a href="https://www.jasoneady.com/" target="_blank" rel="noopener noreferrer" style={{color:'#8b2020'}}>Jason Eady</a> and <a href="https://www.adamhood.com/" target="_blank" rel="noopener noreferrer" style={{color:'#8b2020'}}>Adam Hood</a>, the experience helped shape both our craft and the community we've built together.
         </p>
         <p style={pagesStyles.body}>
-          What none of us expected was how much the place itself would matter. Gruene — with its legendary dance hall, its cypress-shaded river bends, its unhurried pace — has a way of pulling the truth out of a song. You can't fake it there.
+          What none of us expected was how much the place itself would matter. Gruene, with its legendary dance hall, its cypress-shaded river bends, and its unhurried pace, has a way of pulling the truth out of a song. You can't fake it there.
         </p>
         <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '40px 0' }} />
         <h2 style={pagesStyles.h2}>The Community We've Built</h2>
         <p style={pagesStyles.body}>
-          Since then, we've stayed connected through monthly songwriting circles — sharing new material, listening closely, and offering honest feedback and encouragement. What began as a creative exercise has grown into something deeper: a place where friendships take root, ideas sharpen, and each writer finds their voice.
+          Since then, we've stayed connected through monthly songwriting circles: sharing new material, listening closely, and offering honest feedback and encouragement. What began as a creative exercise has grown into something deeper: a place where friendships take root, ideas sharpen, and each writer finds their voice.
         </p>
         <p style={pagesStyles.body}>
-          Our group spans a range of styles, backgrounds, and goals. Neo-traditional country from the Fort Worth dancehalls. Red Dirt ballads from the Texas plains. Kansas folk. Nashville pop. Outlaw southern gothic. Indie Americana. We don't all sound the same — and that's exactly the point.
+          Our group spans a range of styles, backgrounds, and goals. Neo-traditional country from the Fort Worth dancehalls. Red Dirt ballads from the Texas plains. Kansas folk. Nashville pop. Outlaw southern gothic. Indie Americana. We don't all sound the same. And that's exactly the point.
         </p>
         <p style={pagesStyles.body}>
           But we're united by a shared respect for the craft, and for each other. Gatherings like this are simply an extension of that spirit.
-        </p>
-        <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '40px 0' }} />
-        <h2 style={pagesStyles.h2}>Canyon Lake, Texas</h2>
-        <p style={pagesStyles.body}>
-          We're proud to be bringing our music to Canyon Lake, near the Guadalupe River, in the heart of the Texas Hill Country. With River Road nearby and bluebonnets and Indian paintbrush in bloom, it's a fitting backdrop for songs grounded in story, place, and connection.
         </p>
         <div style={{ background: '#1a1208', padding: '32px', marginTop: '48px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', textAlign: 'center' }}>
@@ -264,37 +259,37 @@ const MerchPage = () => {
         <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Official Merchandise</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>The Store</h1>
       </div>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '72px 32px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '48px', justifyItems: 'center' }}>
-          {/* Poster product card */}
-          <div style={{ background: '#fff', border: '1px solid #d4c4a8', maxWidth: '400px', width: '100%' }}>
-            <img
-              src="uploads/Gruene_Poster.jpg"
-              alt="2026 Texas Hill Country Spring House Concert Poster"
-              style={{ width: '100%', display: 'block' }}
-            />
-            <div style={{ padding: '28px' }}>
-              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>The Gruene Songwriters Collective</div>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '22px', margin: '0 0 16px', lineHeight: 1.3 }}>2026 Texas Hill Country Spring House Concert</h2>
-              <div style={{ width: '40px', height: '2px', background: '#8b2020', marginBottom: '16px' }} />
-              <div style={{ fontFamily: "'Oswald', sans-serif", color: '#1a1208', fontSize: '24px', letterSpacing: '0.05em', marginBottom: '24px' }}>$35.00</div>
-              <a
-                href="https://amplifi.printify.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'block', textAlign: 'center',
-                  background: '#8b2020', color: '#f2ead8',
-                  fontFamily: "'Oswald', sans-serif", fontSize: '13px',
-                  letterSpacing: '0.2em', textTransform: 'uppercase',
-                  padding: '14px 32px', textDecoration: 'none',
-                  transition: 'background 0.2s',
-                }}
-              >
-                Order Now
-              </a>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '72px 32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '40px' }}>
+          {[
+            { img: 'uploads/Gruene_Poster.jpg', alt: '2026 Texas Hill Country Spring House Concert Poster', title: '2026 Texas Hill Country Spring House Concert', price: '$35.99' },
+            { img: 'uploads/hat.png', alt: 'Gruene Water Tower Trucker Cap', title: 'Gruene Water Tower Trucker Cap', price: '$21.37' },
+            { img: 'uploads/sticker.png', alt: 'The Gruene Songwriters Collective Sticker', title: 'The Gruene Songwriters Collective Sticker', price: '$3.99' },
+          ].map(item => (
+            <div key={item.title} style={{ background: '#fff', border: '1px solid #d4c4a8' }}>
+              <img src={item.img} alt={item.alt} style={{ width: '100%', display: 'block', aspectRatio: '1 / 1', objectFit: 'cover' }} />
+              <div style={{ padding: '24px' }}>
+                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '11px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>The Gruene Songwriters Collective</div>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '18px', margin: '0 0 12px', lineHeight: 1.3 }}>{item.title}</h2>
+                <div style={{ width: '40px', height: '2px', background: '#8b2020', marginBottom: '12px' }} />
+                <div style={{ fontFamily: "'Oswald', sans-serif", color: '#1a1208', fontSize: '22px', letterSpacing: '0.05em', marginBottom: '20px' }}>{item.price}</div>
+                <a
+                  href="https://amplifi.printify.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'block', textAlign: 'center',
+                    background: '#8b2020', color: '#f2ead8',
+                    fontFamily: "'Oswald', sans-serif", fontSize: '12px',
+                    letterSpacing: '0.2em', textTransform: 'uppercase',
+                    padding: '12px 24px', textDecoration: 'none',
+                  }}
+                >
+                  Order Now
+                </a>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
