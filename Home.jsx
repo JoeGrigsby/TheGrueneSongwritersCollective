@@ -193,7 +193,7 @@ const HomePage = ({ navigate, headlineFont }) => {
       {/* MERCH STRIP */}
       <section style={{ background: '#1a1208', padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ ...homeStyles.sectionLabel, color: '#c8a45a' }}>Official Merch</div>
-        <h2 style={{ ...homeStyles.sectionTitle, color: '#f2ead8', fontSize: '36px' }}>Wear the Story</h2>
+        <h2 style={{ ...homeStyles.sectionTitle, color: '#f2ead8', fontSize: '36px' }}>Own a Part of the Story</h2>
         <div style={{ width: '80px', height: '1px', background: '#c8a45a', margin: '16px auto 32px' }} />
         <button onClick={() => navigate('merch')} style={homeStyles.btnGold}>Shop Now</button>
       </section>
