@@ -122,7 +122,7 @@ const HomePage = ({ navigate, headlineFont }) => {
             The Gruene Songwriters Collective formed in the summer of '25, when a mix of aspiring and seasoned writers gathered for a three-day workshop in Gruene, Texas. Led by acclaimed songwriters Jason Eady and Adam Hood, the experience helped shape both our craft and the community we've built.
           </p>
           <p style={homeStyles.bodyText}>
-            Since then, we've stayed connected through monthly songwriting circles — sharing new material, listening closely, and offering honest feedback and encouragement. Our group spans a range of styles, backgrounds, and goals, but we're united by a shared respect for the craft, and for each other.
+            Since then, we've stayed connected through monthly songwriting circles: sharing new material, listening closely, and offering honest feedback and encouragement. Our group spans a range of styles, backgrounds, and goals, but we're united by a shared respect for the craft, and for each other.
           </p>
           <button onClick={() => navigate('story')} style={{ ...homeStyles.btnPrimary, background: '#8b2020', marginTop: '24px' }}>Read the Full Story</button>
         </div>
@@ -173,7 +173,7 @@ const HomePage = ({ navigate, headlineFont }) => {
             </h2>
             <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '16px 0' }} />
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', letterSpacing: '0.15em', fontSize: '15px', marginBottom: '8px' }}>
-              SATURDAY — MARCH 28, 2026
+              SATURDAY · MARCH 28, 2026
             </div>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', letterSpacing: '0.1em', fontSize: '14px', marginBottom: '24px' }}>
               6 O'CLOCK IN THE EVENING · CANYON LAKE, TEXAS
