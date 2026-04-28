@@ -46,9 +46,10 @@ const ARTIST_DATA = [
     photo: 'uploads/c476921b-6f46-40dd-af98-965b1c7acc8f.png',
     bio: `Americana and Texas Red Dirt songwriter who draws from real experiences and explores love, loss, and personal growth. His debut single, "Memories in a Frame," honors USMC K9 Handler CLP Dustin J. Lee, a testament to his commitment to writing songs that mean something. John brings honesty and heart to everything he puts on paper.`,
     tags: ['Americana', 'Red Dirt', 'Texas Country'],
-    website: null,
+    website: 'https://johngurnot.com/',
     featuredSong: '"Memories in a Frame"',
     links: {
+      spotify: 'https://open.spotify.com/artist/7cXWrkdSXmVU8IOszPJI6G?si=qV7rb3CAQU-eNz8TAWHT6w&nd=1&dlsi=022ae30421db4c06',
       instagram: 'https://www.instagram.com/jgurnotmusic/',
     },
   },
