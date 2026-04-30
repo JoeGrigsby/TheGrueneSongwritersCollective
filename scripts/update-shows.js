@@ -1,5 +1,6 @@
 // Weekly script: scrapes artist show pages and opens a PR if new shows are found.
 const Anthropic = require('@anthropic-ai/sdk');
+const puppeteer = require('puppeteer');
 const fs = require('fs');
 const { execSync } = require('child_process');
 
@@ -19,12 +20,18 @@ const ARTIST_PAGES = [
 ];
 
 async function fetchPage(url) {
-  const res = await fetch(url, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GSC-show-updater/1.0)' },
-    signal: AbortSignal.timeout(15000),
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  return res.text();
+  try {
+    const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    return await page.content();
+  } finally {
+    await browser.close();
+  }
 }
 
 // Strip tags and collapse whitespace so Claude gets denser, cheaper input.
