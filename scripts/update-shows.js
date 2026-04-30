@@ -60,7 +60,11 @@ async function main() {
     try {
       console.log(`Fetching ${page.url} ...`);
       const html = await fetchPage(page.url);
-      fetched.push({ ...page, text: stripHtml(html) });
+      const text = stripHtml(html);
+      console.log(`--- Extracted text for ${page.artist} (first 800 chars) ---`);
+      console.log(text.slice(0, 800));
+      console.log('---');
+      fetched.push({ ...page, text });
     } catch (err) {
       console.error(`  Could not fetch ${page.url}: ${err.message}`);
     }
@@ -123,6 +127,9 @@ Important: output ONLY the markers and the code/list — no explanations.`;
   });
 
   const response = message.content[0].text.trim();
+  console.log('--- Claude raw response ---');
+  console.log(response.slice(0, 1000));
+  console.log('---');
 
   if (response === 'NO_NEW_SHOWS' || response.includes('NO_NEW_SHOWS')) {
     console.log('No new shows found. Nothing to update.');
