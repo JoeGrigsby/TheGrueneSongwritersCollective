@@ -176,8 +176,18 @@ const EventsPage = ({ navigate }) => {
 };
 
 // ── MUSIC ──────────────────────────────────────────────────
+const FEATURED_VIDEOS = [
+  { id: 'MaiZnVxY3xI', title: 'Dead Head Home', artist: 'Nate Young' },
+  { id: 'vffLzbgxg1I', title: 'The Loneliest Two Step', artist: 'Nate Young' },
+  { id: 'dISiH9H3XPc', title: "Halfway Happy Ain't Enough", artist: 'Nate Young' },
+];
+
 const MusicPage = () => {
   const artists = window.ARTIST_DATA || [];
+  const [videoIndex, setVideoIndex] = React.useState(0);
+  const video = FEATURED_VIDEOS[videoIndex];
+  const prev = () => setVideoIndex(i => (i - 1 + FEATURED_VIDEOS.length) % FEATURED_VIDEOS.length);
+  const next = () => setVideoIndex(i => (i + 1) % FEATURED_VIDEOS.length);
   return (
     <div style={{ background: '#f2ead8', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ background: '#1a1208', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
@@ -188,15 +198,31 @@ const MusicPage = () => {
         {/* Featured Music */}
         <div style={{ marginBottom: '64px' }}>
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Watch</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 32px', textAlign: 'center' }}>Featured Music</h2>
-          <div style={{ position: 'relative', paddingTop: '56.25%', background: '#1a1208', boxShadow: '8px 8px 32px rgba(0,0,0,0.25)' }}>
-            <iframe
-              src="https://www.youtube.com/embed/MaiZnVxY3xI"
-              title="Featured Music"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-            />
+          <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 8px', textAlign: 'center' }}>Featured Music</h2>
+          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+            <div style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '18px', fontStyle: 'italic' }}>{video.title}</div>
+            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '4px' }}>{video.artist}</div>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', paddingTop: '56.25%', background: '#1a1208', boxShadow: '8px 8px 32px rgba(0,0,0,0.25)' }}>
+              <iframe
+                key={video.id}
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+              />
+            </div>
+            {/* Nav arrows */}
+            <button onClick={prev} style={{ position: 'absolute', top: '50%', left: '-20px', transform: 'translateY(-50%)', background: '#1a1208', border: '1px solid #c8a45a', color: '#c8a45a', width: '40px', height: '40px', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
+            <button onClick={next} style={{ position: 'absolute', top: '50%', right: '-20px', transform: 'translateY(-50%)', background: '#1a1208', border: '1px solid #c8a45a', color: '#c8a45a', width: '40px', height: '40px', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
+          </div>
+          {/* Dot indicators */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '20px' }}>
+            {FEATURED_VIDEOS.map((_, i) => (
+              <button key={i} onClick={() => setVideoIndex(i)} style={{ width: i === videoIndex ? '24px' : '8px', height: '8px', borderRadius: '4px', border: 'none', background: i === videoIndex ? '#8b2020' : '#c8a45a50', cursor: 'pointer', padding: 0, transition: 'all 0.3s' }} />
+            ))}
           </div>
         </div>
         {/* The Artists */}
