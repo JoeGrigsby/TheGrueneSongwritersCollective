@@ -5,7 +5,7 @@ const ARTIST_DATA = [
     name: 'Wesley Hanna', slug: 'wesley-hanna', initials: 'WH', genre: 'Neo-Traditional Country',
     hometown: 'Fort Worth, TX',
     photo: 'uploads/wesley_hanna.png',
-    bio: `Independent country singer-songwriter from Fort Worth, Texas. Roughneck, oilfield engineer, and showman — Wesley's real-world experience as a working man informs every line he writes. He regularly plays in legendary Texas dancehalls, blending neo-traditional country, Western Swing, and local flair. His songwriting reflects his lifelong Texan experiences, delivered with an authenticity that's hard-earned and impossible to fake.`,
+    bio: `Independent country singer-songwriter from Fort Worth, Texas. Roughneck, oilfield engineer, and showman. Wesley's real-world experience as a working man informs every line he writes. He regularly plays in legendary Texas dancehalls, blending neo-traditional country, Western Swing, and local flair. His songwriting reflects his lifelong Texan experiences, delivered with an authenticity that's hard-earned and impossible to fake.`,
     tags: ['Neo-Traditional Country', 'Western Swing', 'Texas Dancehall'],
     website: 'https://wesleyhannamusic.com',
     links: {
@@ -20,7 +20,7 @@ const ARTIST_DATA = [
     name: 'Chris Welch', slug: 'chris-welch', initials: 'CW', genre: 'Americana / Roots',
     hometown: 'Jackson, MO',
     photo: 'uploads/ef534480-5491-4254-b1a1-8aa650ad3c71.png',
-    bio: `Road-tested singer-songwriter whose music is driven by story, simplicity, and truth. Steeped in the storytelling traditions of Americana and roots country, his writing reflects a life shaped by travel, time, and reflection. He explores themes of restlessness, resilience, and the quiet moments in between — delivered with a voice that feels familiar and sincere.`,
+    bio: `Road-tested singer-songwriter whose music is driven by story, simplicity, and truth. Steeped in the storytelling traditions of Americana and roots country, his writing reflects a life shaped by travel, time, and reflection. He explores themes of restlessness, resilience, and the quiet moments in between, delivered with a voice that feels familiar and sincere.`,
     tags: ['Americana', 'Roots Country', 'Storytelling'],
     website: 'https://chriswelchmusic.com/home',
     links: {
@@ -44,11 +44,12 @@ const ARTIST_DATA = [
     name: 'John Gurnot', slug: 'john-gurnot', initials: 'JG', genre: 'Americana / Red Dirt',
     hometown: 'Texas',
     photo: 'uploads/c476921b-6f46-40dd-af98-965b1c7acc8f.png',
-    bio: `Americana and Texas Red Dirt songwriter who draws from real experiences and explores love, loss, and personal growth. His debut single, "Memories in a Frame," honors USMC K9 Handler CLP Dustin J. Lee — a testament to his commitment to writing songs that mean something. John brings honesty and heart to everything he puts on paper.`,
+    bio: `Americana and Texas Red Dirt songwriter who draws from real experiences and explores love, loss, and personal growth. His debut single, "Memories in a Frame," honors USMC K9 Handler CLP Dustin J. Lee, a testament to his commitment to writing songs that mean something. John brings honesty and heart to everything he puts on paper.`,
     tags: ['Americana', 'Red Dirt', 'Texas Country'],
-    website: null,
+    website: 'https://johngurnot.com/',
     featuredSong: '"Memories in a Frame"',
     links: {
+      spotify: 'https://open.spotify.com/artist/7cXWrkdSXmVU8IOszPJI6G?si=qV7rb3CAQU-eNz8TAWHT6w&nd=1&dlsi=022ae30421db4c06',
       instagram: 'https://www.instagram.com/jgurnotmusic/',
     },
   },
@@ -60,29 +61,31 @@ const ARTIST_DATA = [
     tags: ['Folk', 'Country', 'Storytelling'],
     website: null,
     links: {
-      instagram: 'https://www.instagram.com/nathanjyoungmusic/',
+      instagram: 'https://www.instagram.com/nathan_young_music/',
     },
+    songLog: 'uploads/songlist.png',
   },
   {
     name: 'Rowdy Miller', slug: 'rowdy-miller', initials: 'RM', genre: 'Outlaw / Southern Gothic',
     hometown: 'Canyon Lake, TX',
     photo: 'uploads/3955c5f1-a370-4349-b088-4003903d7bf5.png',
-    bio: `Texas Hill Country songwriter blending outlaw country, southern gothic storytelling, and acoustic grit. Rowdy's songs explore loss, redemption, and restless roads — delivered with honest vocals and a voice shaped by a hard-earned life. His writing carries a rawness that can only come from someone who's lived every word.`,
+    bio: `Texas Hill Country songwriter blending outlaw country, southern gothic storytelling, and acoustic grit. Rowdy's songs explore loss, redemption, and restless roads, delivered with honest vocals and a voice shaped by a hard-earned life. His writing carries a rawness that can only come from someone who's lived every word.`,
     tags: ['Outlaw Country', 'Southern Gothic', 'Acoustic'],
+    featuredSong: 'Producer: 2026 Texas Hill Country Spring House Concert',
     website: null,
     links: {
       soundcloud: 'https://soundcloud.com/rowdymiller',
+      instagram: 'https://www.instagram.com/andreisimo/',
     },
   },
   {
-    name: 'Jack Brandt', slug: 'jack-brandt', initials: 'JB', genre: 'Country / Americana',
+    name: 'Jack Brandt', slug: 'jack-brandt', initials: 'JB', genre: 'Country / Americana', hideMusicLink: true,
     hometown: 'Houston, TX',
     photo: 'uploads/7ed29f46-0596-4218-b610-d3c8093b94c7.png',
-    bio: `Country and Americana songs rooted in strong melodies, honest emotion, and a deep respect for craft. Jack's songs draw from country traditions but are grounded in the guitar work. His lyric videos and Apple Music credits reflect a writer building a real body of work — one voice and one story at a time.`,
+    bio: `Country and Americana songs rooted in strong melodies, honest emotion, and a deep respect for craft. Jack's songs draw from country traditions but are grounded in the guitar work. His lyric videos and Apple Music credits reflect a writer building a real body of work, one voice and one story at a time.`,
     tags: ['Country', 'Americana', 'Guitar-Driven'],
     website: null,
     links: {
-      apple: 'https://music.apple.com/us/album/the-human-experience/1860654982',
       youtube: 'https://www.youtube.com/channel/UC-czQzYgM5oSEv6wpAKl7rQ',
       instagram: 'https://www.instagram.com/jackbrandtmusic/',
     },
@@ -92,17 +95,10 @@ const ARTIST_DATA = [
     name: 'Todd Johnson', slug: 'todd-johnson', initials: 'TJ', genre: 'Americana Folk',
     hometown: 'Texas Hill Country',
     photo: 'uploads/bf61bdd0-8be1-41dc-9e6e-86ae9d814b15.png',
-    bio: `Americana folk singer-songwriter from the Texas Hill Country. Todd's playing and writing style is inspired by the great singer-songwriter legends — Guy Clark, Robert Earl Keen, John Prine, and Jason Isbell. His songs carry that same spirit of place, plainspoken truth, and deep humanity that defines the best of the form.`,
+    bio: `Americana folk singer-songwriter from the Texas Hill Country. Todd's playing and writing style is inspired by the great singer-songwriter legends: Guy Clark, Robert Earl Keen, John Prine, and Jason Isbell. His songs carry that same spirit of place, plainspoken truth, and deep humanity that defines the best of the form.`,
     tags: ['Americana', 'Folk', 'Singer-Songwriter'],
-    website: 'https://www.toddjohnsonartist.com/',
-    links: {
-      spotify: 'https://open.spotify.com/artist/7LrkpOjbAfAn3j0nZQEyBC',
-      apple: 'https://music.apple.com/us/artist/todd-johnson-the-revolvers/1152977556',
-      youtube: 'https://www.youtube.com/user/toddjohnsonband',
-      instagram: 'https://www.instagram.com/realtoddjohnson/',
-      facebook: 'https://www.facebook.com/toddjohnsonartist/',
-      contact: 'https://toddjohnsonartist.com/epk',
-    },
+    website: null,
+    links: {},
   },
   {
     name: 'Katie Markus', slug: 'katie-markus', initials: 'KM', genre: 'Indie Americana',
@@ -123,9 +119,6 @@ const ARTIST_DATA = [
     tags: ['Folk', 'Pop', 'Nashville'],
     website: null,
     links: {
-      spotify: 'https://open.spotify.com/artist/40Y2i2VQDROPEshfbqJYqL',
-      soundcloud: 'https://soundcloud.com/nashvilledana',
-      youtube: 'https://m.youtube.com/watch?v=R-BhV6Nagv8',
       instagram: 'https://www.instagram.com/nashvilledana/',
     },
   },
@@ -169,7 +162,7 @@ const ArtistCard = ({ artist, onClick }) => {
 const ArtistBioPage = ({ artist, onBack }) => {
   React.useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '80px' }}>
+    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       {/* Back bar */}
       <div style={{ background: '#221508', padding: '16px 40px', borderBottom: '1px solid #3d2810' }}>
         <button onClick={onBack} style={{
@@ -194,7 +187,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
           <div>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Member · The Gruene Songwriters Collective</div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(32px, 5vw, 52px)', margin: '0 0 8px', lineHeight: 1.1 }}>{artist.name}</h1>
-            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>{artist.genre} · {artist.hometown}</div>
+            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>{artist.hometown}</div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {artist.tags.map(t => (
                 <span key={t} style={{ background: '#2d1a0a', border: '1px solid #3d2810', color: '#c8a45a', padding: '4px 12px', fontSize: '11px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.15em', textTransform: 'uppercase' }}>{t}</span>
@@ -205,7 +198,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
         <div style={{ width: '100%', height: '1px', background: 'linear-gradient(to right, #c8a45a, transparent)', marginBottom: '40px' }} />
         {artist.featuredSong && (
           <div style={{ background: '#221508', border: '1px solid #c8a45a', padding: '16px 24px', marginBottom: '32px', fontFamily: "'Playfair Display', serif", color: '#c8a45a', fontSize: '18px', fontStyle: 'italic' }}>
-            Featured Song: {artist.featuredSong}
+            {artist.featuredSong}
           </div>
         )}
         <p style={{ fontSize: '20px', lineHeight: 1.9, color: '#d4c4a8', fontFamily: "'Crimson Pro', Georgia, serif", margin: '0 0 40px' }}>{artist.bio}</p>
@@ -245,6 +238,13 @@ const ArtistBioPage = ({ artist, onBack }) => {
         {!artist.website && Object.keys(artist.links).length === 0 && (
           <p style={{ color: '#5a3a1a', fontStyle: 'italic', fontSize: '15px' }}>Links coming soon.</p>
         )}
+        {artist.songLog && (
+          <div style={{ marginTop: '48px' }}>
+            <div style={{ width: '100%', height: '1px', background: 'linear-gradient(to right, #c8a45a, transparent)', marginBottom: '32px' }} />
+            <h3 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '24px', margin: '0 0 24px' }}>Song Log</h3>
+            <img src={artist.songLog} alt="Song Log" style={{ width: '100%', maxWidth: '600px', display: 'block' }} />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -260,7 +260,7 @@ const ArtistsPage = ({ navigate, selectedArtistSlug }) => {
   }
 
   return (
-    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '80px' }}>
+    <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 32px' }}>
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>The Roster</div>

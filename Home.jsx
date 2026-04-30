@@ -122,7 +122,7 @@ const HomePage = ({ navigate, headlineFont }) => {
             The Gruene Songwriters Collective formed in the summer of '25, when a mix of aspiring and seasoned writers gathered for a three-day workshop in Gruene, Texas. Led by acclaimed songwriters Jason Eady and Adam Hood, the experience helped shape both our craft and the community we've built.
           </p>
           <p style={homeStyles.bodyText}>
-            Since then, we've stayed connected through monthly songwriting circles — sharing new material, listening closely, and offering honest feedback and encouragement. Our group spans a range of styles, backgrounds, and goals, but we're united by a shared respect for the craft, and for each other.
+            Since then, we've stayed connected through monthly songwriting circles: sharing new material, listening closely, and offering honest feedback and encouragement. Our group spans a range of styles, backgrounds, and goals, but we're united by a shared respect for the craft, and for each other.
           </p>
           <button onClick={() => navigate('story')} style={{ ...homeStyles.btnPrimary, background: '#8b2020', marginTop: '24px' }}>Read the Full Story</button>
         </div>
@@ -167,21 +167,21 @@ const HomePage = ({ navigate, headlineFont }) => {
       <section style={{ background: '#f2ead8', padding: '80px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
           <div>
-            <div style={homeStyles.sectionLabel}>Upcoming Event</div>
+            <div style={homeStyles.sectionLabel}>Featured Event</div>
             <h2 style={{ ...homeStyles.sectionTitle, textAlign: 'left', fontSize: 'clamp(28px, 4vw, 48px)' }}>
               Texas Hill Country<br/>Spring House Concert
             </h2>
             <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '16px 0' }} />
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', letterSpacing: '0.15em', fontSize: '15px', marginBottom: '8px' }}>
-              SATURDAY — MARCH 28, 2026
+              SATURDAY · MARCH 28, 2026
             </div>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', letterSpacing: '0.1em', fontSize: '14px', marginBottom: '24px' }}>
               6 O'CLOCK IN THE EVENING · CANYON LAKE, TEXAS
             </div>
             <p style={{ ...homeStyles.bodyText, textAlign: 'left', margin: '0 0 24px' }}>
-              From the hills of Gruene to the shores of Canyon Lake, near the Guadalupe River — bluebonnets and Indian paintbrush in bloom.
+              From the hills of Gruene to the shores of Canyon Lake, near the Guadalupe River, with bluebonnets and Indian paintbrush in bloom.
             </p>
-            <button onClick={() => navigate('events')} style={{ ...homeStyles.btnPrimary, background: '#8b2020' }}>Event Details & Tickets</button>
+            <button onClick={() => navigate('events', null, 'past-events')} style={{ ...homeStyles.btnPrimary, background: '#8b2020' }}>Event Recap</button>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <img src="uploads/Gruene_Poster.jpg" alt="Spring House Concert Poster"
@@ -193,7 +193,7 @@ const HomePage = ({ navigate, headlineFont }) => {
       {/* MERCH STRIP */}
       <section style={{ background: '#1a1208', padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ ...homeStyles.sectionLabel, color: '#c8a45a' }}>Official Merch</div>
-        <h2 style={{ ...homeStyles.sectionTitle, color: '#f2ead8', fontSize: '36px' }}>Wear the Story</h2>
+        <h2 style={{ ...homeStyles.sectionTitle, color: '#f2ead8', fontSize: '36px' }}>Own a Part of the Story</h2>
         <div style={{ width: '80px', height: '1px', background: '#c8a45a', margin: '16px auto 32px' }} />
         <button onClick={() => navigate('merch')} style={homeStyles.btnGold}>Shop Now</button>
       </section>

@@ -1,0 +1,35 @@
+name: Weekly Show Check
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'  # Every Monday at 10am UTC
+  workflow_dispatch:       # Allow manual trigger from GitHub Actions tab
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update-shows:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install script dependencies
+        run: npm install --prefix scripts
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+
+      - name: Run show updater
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+        run: node scripts/update-shows.js
