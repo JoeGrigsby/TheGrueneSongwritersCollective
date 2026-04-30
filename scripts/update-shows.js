@@ -15,7 +15,7 @@ const ARTIST_PAGES = [
   {
     artist: 'Wesley Hanna',
     photo: 'uploads/wesley_hanna.png',
-    url: 'https://wesleyhannamusic.com/',
+    url: 'https://www.bandsintown.com/a/13777778-wesley-hanna',
   },
 ];
 
@@ -28,7 +28,9 @@ async function fetchPage(url) {
   try {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
+    // Extra wait for JS-heavy pages like Bandsintown to finish rendering
+    await new Promise(r => setTimeout(r, 3000));
     return await page.content();
   } finally {
     await browser.close();
