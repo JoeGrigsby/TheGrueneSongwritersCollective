@@ -215,8 +215,8 @@ const MusicPage = () => {
               />
             </div>
             {/* Nav arrows */}
-            <button onClick={prev} style={{ position: 'absolute', top: '50%', left: '-20px', transform: 'translateY(-50%)', background: '#1a1208', border: '1px solid #c8a45a', color: '#c8a45a', width: '40px', height: '40px', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
-            <button onClick={next} style={{ position: 'absolute', top: '50%', right: '-20px', transform: 'translateY(-50%)', background: '#1a1208', border: '1px solid #c8a45a', color: '#c8a45a', width: '40px', height: '40px', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
+            <button onClick={prev} style={{ position: 'absolute', top: '50%', left: '-28px', transform: 'translateY(-50%)', background: '#8b2020', border: '2px solid #c8a45a', color: '#f2ead8', width: '52px', height: '52px', cursor: 'pointer', fontSize: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>‹</button>
+            <button onClick={next} style={{ position: 'absolute', top: '50%', right: '-28px', transform: 'translateY(-50%)', background: '#8b2020', border: '2px solid #c8a45a', color: '#f2ead8', width: '52px', height: '52px', cursor: 'pointer', fontSize: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>›</button>
           </div>
           {/* Dot indicators */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '20px' }}>
