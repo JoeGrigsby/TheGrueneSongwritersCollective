@@ -10,6 +10,10 @@ const StoryPage = () => {
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Our Story</h1>
         <div style={{ color: '#c8a45a', letterSpacing: '0.12em', fontSize: 'clamp(10px, 2.8vw, 13px)', whiteSpace: 'nowrap' }}>★ &nbsp; FROM THE HILLS OF GRUENE &nbsp; ★</div>
       </div>
+      {/* Feature photo */}
+      <div style={{ overflow: 'hidden' }}>
+        <img src="uploads/1_0_2.png" alt="The Gruene Songwriters Collective" style={{ width: '100%', height: '480px', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+      </div>
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
         <div style={pagesStyles.pullQuote}>
@@ -115,6 +119,7 @@ const EventsPage = ({ navigate }) => {
         @media (max-width: 640px) {
           .past-event-row { grid-template-columns: 1fr !important; }
           .past-event-poster-col { display: none !important; }
+          .event-venue-col { text-align: left !important; min-width: unset !important; width: 100%; }
         }
       `}</style>
       <div style={{ background: '#221508', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
@@ -142,7 +147,7 @@ const EventsPage = ({ navigate }) => {
                     {evt.date}{evt.time ? ` · ${evt.time}` : ''}
                   </div>
                 </div>
-                <div style={{ textAlign: 'right', minWidth: '160px' }}>
+                <div className="event-venue-col" style={{ textAlign: 'right', minWidth: '160px' }}>
                   <div style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: '16px' }}>
                     {evt.venueUrl
                       ? <a href={evt.venueUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#f2ead8', textDecoration: 'underline', textDecorationColor: '#c8a45a' }}>{evt.venue}</a>
@@ -393,14 +398,6 @@ const ContactPage = () => {
             </button>
           </form>
         )}
-        <div style={{ marginTop: '60px', borderTop: '1px solid #3d2810', paddingTop: '40px' }}>
-          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '20px', textAlign: 'center' }}>Follow the Collective</div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            {['Facebook', 'Instagram', 'YouTube', 'Spotify'].map(s => (
-              <a key={s} href="#" style={{ color: '#8b6540', fontFamily: "'Oswald', sans-serif", fontSize: '13px', letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none', borderBottom: '1px solid #3d2810', paddingBottom: '2px' }}>{s}</a>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );
