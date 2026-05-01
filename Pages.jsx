@@ -1,4 +1,3 @@
-
 // Pages.jsx — Story, Events, Music, Merch, Contact pages
 
 // ── OUR STORY ──────────────────────────────────────────────
@@ -7,9 +6,9 @@ const StoryPage = () => {
     <div style={{ background: '#f2ead8', minHeight: '100vh', paddingTop: '72px' }}>
       {/* Hero banner */}
       <div style={{ background: '#1a1208', padding: '80px 32px', textAlign: 'center' }}>
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>The Gruene Songwriters Collective</div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '16px' }}>The Gruene Songwriters Collective</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Our Story</h1>
-        <div style={{ color: '#c8a45a', letterSpacing: '0.25em', fontSize: '13px' }}>★ &nbsp; FROM THE HILLS OF GRUENE &nbsp; ★</div>
+        <div style={{ color: '#c8a45a', letterSpacing: '0.12em', fontSize: 'clamp(10px, 2.8vw, 13px)', whiteSpace: 'nowrap' }}>★ &nbsp; FROM THE HILLS OF GRUENE &nbsp; ★</div>
       </div>
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
@@ -112,8 +111,14 @@ const UPCOMING_EVENTS = [
 const EventsPage = ({ navigate }) => {
   return (
     <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
+      <style>{`
+        @media (max-width: 640px) {
+          .past-event-row { grid-template-columns: 1fr !important; }
+          .past-event-poster-col { display: none !important; }
+        }
+      `}</style>
       <div style={{ background: '#221508', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Live Music</div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Live Music</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Shows</h1>
       </div>
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 32px' }}>
@@ -155,8 +160,8 @@ const EventsPage = ({ navigate }) => {
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b6540', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>In the Books</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(28px, 4vw, 48px)', margin: '0 0 32px', borderBottom: '1px solid #3d2810', paddingBottom: '24px' }}>Past Events</h2>
           {PAST_EVENTS.map(evt => (
-            <div key={evt.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '48px', alignItems: 'start', marginBottom: '48px' }}>
-              <div>
+            <div key={evt.id} className="past-event-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '48px', alignItems: 'start', marginBottom: '48px' }}>
+              <div className="past-event-poster-col">
                 <img src={evt.poster} alt={evt.title}
                   style={{ width: '100%', boxShadow: '6px 6px 24px rgba(0,0,0,0.5)', border: '3px solid #3d2810' }} />
               </div>
@@ -209,13 +214,13 @@ const MusicPage = () => {
   return (
     <div style={{ background: '#f2ead8', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ background: '#1a1208', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Stream & Download</div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Stream & Download</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Music</h1>
       </div>
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 32px' }}>
         {/* Featured Music */}
         <div style={{ marginBottom: '64px' }}>
-          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Watch</div>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Watch</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 8px', textAlign: 'center' }}>Featured Music</h2>
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <div style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: '18px', fontStyle: 'italic' }}>{video.title}</div>
@@ -245,7 +250,7 @@ const MusicPage = () => {
         </div>
         {/* The Artists */}
         <div>
-          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Find Your Favorite</div>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Find Your Favorite</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#1a1208', fontSize: 'clamp(28px, 4vw, 44px)', margin: '0 0 32px', textAlign: 'center' }}>The Artists</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {artists.map(a => {
@@ -263,9 +268,9 @@ const MusicPage = () => {
                   <div style={{ color: '#8b6540', fontSize: '12px', fontFamily: "'Oswald', sans-serif", letterSpacing: '0.1em', textTransform: 'uppercase' }}>{a.genre}</div>
                 </div>
                 {firstLink ? (
-                  <a href={firstLink} target="_blank" rel="noopener noreferrer" style={{ color: '#c8a45a', fontSize: '18px', textDecoration: 'none', flexShrink: 0 }}>▶</a>
+                  <a href={firstLink} target="_blank" rel="noopener noreferrer" style={{ color: '#c8a45a', fontFamily: "'Oswald', sans-serif", fontSize: '11px', letterSpacing: '0.15em', textDecoration: 'none', flexShrink: 0, borderBottom: '1px solid rgba(200,164,90,0.5)', paddingBottom: '1px' }}>LISTEN</a>
                 ) : (
-                  <span style={{ color: '#3d2810', fontSize: '18px', flexShrink: 0 }}>▶</span>
+                  <span style={{ color: '#3d2810', fontFamily: "'Oswald', sans-serif", fontSize: '11px', letterSpacing: '0.15em', flexShrink: 0 }}>—</span>
                 )}
               </div>
             );
@@ -291,7 +296,7 @@ const MerchPage = () => {
   return (
     <div style={{ background: '#f2ead8', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ background: '#1a1208', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Official Merchandise</div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Official Merchandise</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>The Store</h1>
       </div>
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '72px 32px' }}>
@@ -347,7 +352,7 @@ const ContactPage = () => {
   return (
     <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ background: '#221508', padding: '60px 32px', textAlign: 'center', borderBottom: '1px solid #3d2810' }}>
-        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Get in Touch</div>
+        <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>Get in Touch</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0' }}>Contact & Booking</h1>
       </div>
       <div style={{ maxWidth: '700px', margin: '0 auto', padding: '60px 32px' }}>
