@@ -13,7 +13,7 @@ const StoryPage = () => {
       </div>
       {/* Gruene Hall hero photo */}
       <div style={{ height: '440px', overflow: 'hidden' }}>
-        <img src="uploads/1_0.png" alt="Gruene Hall, Gruene, Texas" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }} />
+        <img src="uploads/1_0.png" alt="Gruene Hall, Gruene, Texas" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom' }} />
       </div>
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
