@@ -1,4 +1,3 @@
-
 // Artists.jsx — Roster grid + individual bio pages
 const ARTIST_DATA = [
   {
@@ -74,7 +73,7 @@ const ARTIST_DATA = [
     featuredSong: 'Producer: 2026 Texas Hill Country Spring House Concert',
     website: null,
     links: {
-      soundcloud: 'https://soundcloud.com/rowdymiller',
+      spotify: 'https://thegruenesongwriterscollective.com/#artists',
       instagram: 'https://www.instagram.com/andreisimo/',
     },
   },
@@ -209,7 +208,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
             background: '#c8a45a', color: '#1a1208', padding: '10px 24px',
             fontFamily: "'Oswald', sans-serif", fontSize: '12px',
             letterSpacing: '0.2em', textTransform: 'uppercase', textDecoration: 'none',
-          }}>Official Website ↗</a>
+          }}>Official Website</a>
         )}
         {/* Streaming & social links */}
         {Object.keys(artist.links).length > 0 && (
@@ -231,7 +230,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
                 fontFamily: "'Oswald', sans-serif", fontSize: '11px',
                 letterSpacing: '0.15em', textTransform: 'uppercase',
                 textDecoration: 'none', display: 'inline-block',
-              }}>{label} ↗</a>
+              }}>{label}</a>
             ))}
           </div>
         )}
@@ -265,7 +264,7 @@ const ArtistsPage = ({ navigate, selectedArtistSlug }) => {
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>The Roster</div>
           <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Meet the Artists</h1>
-          <div style={{ color: '#c8a45a', letterSpacing: '0.2em', fontSize: '13px' }}>★ AMERICANA &nbsp;★&nbsp; COUNTRY &nbsp;★&nbsp; FOLK ★</div>
+          <div style={{ color: '#c8a45a', letterSpacing: '0.12em', fontSize: 'clamp(10px, 2.8vw, 13px)', whiteSpace: 'nowrap' }}>★ AMERICANA &nbsp;★&nbsp; COUNTRY &nbsp;★&nbsp; FOLK ★</div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '24px' }}>
           {ARTIST_DATA.map(artist => (
