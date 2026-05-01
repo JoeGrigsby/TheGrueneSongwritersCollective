@@ -1,4 +1,3 @@
-
 // Home.jsx — Hero, intro, and featured event banner
 const HERO_IMAGES = [
   "uploads/Screenshot 2026-04-19 at 2.11.13 PM.png",
@@ -57,7 +56,7 @@ const HeroCarousel = ({ navigate, loaded, headlineFont = 'Abril Fatface' }) => {
       }} />
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 4, textAlign: 'center', padding: '100px 24px 80px', width: '100%' }}>
-        <div style={{ color: '#c8a45a', letterSpacing: '0.3em', fontSize: '13px', marginBottom: '28px', opacity: loaded ? 1 : 0, transition: 'opacity 0.8s', fontFamily: "'Oswald', sans-serif" }}>
+        <div style={{ color: '#c8a45a', letterSpacing: '0.12em', fontSize: 'clamp(10px, 2.8vw, 13px)', marginBottom: '28px', opacity: loaded ? 1 : 0, transition: 'opacity 0.8s', fontFamily: "'Oswald', sans-serif", whiteSpace: 'nowrap' }}>
           ★ AMERICANA &nbsp;★&nbsp; COUNTRY &nbsp;★&nbsp; FOLK ★
         </div>
         <h1 style={{
@@ -165,14 +164,14 @@ const HomePage = ({ navigate, headlineFont }) => {
 
       {/* FEATURED EVENT */}
       <section style={{ background: '#f2ead8', padding: '80px 24px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+        <div className="featured-event-grid" style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
           <div>
             <div style={homeStyles.sectionLabel}>Featured Event</div>
             <h2 style={{ ...homeStyles.sectionTitle, textAlign: 'left', fontSize: 'clamp(28px, 4vw, 48px)' }}>
               Texas Hill Country<br/>Spring House Concert
             </h2>
             <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '16px 0' }} />
-            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', letterSpacing: '0.15em', fontSize: '15px', marginBottom: '8px' }}>
+            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', letterSpacing: '0.15em', fontSize: '15px', marginBottom: '8px' }}>
               SATURDAY · MARCH 28, 2026
             </div>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#5a3a1a', letterSpacing: '0.1em', fontSize: '14px', marginBottom: '24px' }}>
@@ -200,6 +199,9 @@ const HomePage = ({ navigate, headlineFont }) => {
 
       <style>{`
         .artist-thumb:hover > div:first-child { border-color: #f2ead8 !important; background: #3d2210 !important; }
+        @media (max-width: 640px) {
+          .featured-event-grid { grid-template-columns: 1fr !important; }
+        }
       `}</style>
     </div>
   );
@@ -230,7 +232,7 @@ const homeStyles = {
   sectionLabel: {
     fontFamily: "'Oswald', sans-serif", fontSize: '12px',
     letterSpacing: '0.3em', textTransform: 'uppercase',
-    color: '#8b2020', marginBottom: '12px',
+    color: '#b84040', marginBottom: '12px',
   },
   sectionTitle: {
     fontFamily: "'Playfair Display', Georgia, serif",
