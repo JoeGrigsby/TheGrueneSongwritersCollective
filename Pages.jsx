@@ -11,6 +11,10 @@ const StoryPage = () => {
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Our Story</h1>
         <div style={{ color: '#c8a45a', letterSpacing: '0.25em', fontSize: '13px' }}>★ &nbsp; FROM THE HILLS OF GRUENE &nbsp; ★</div>
       </div>
+      {/* Gruene Hall hero photo */}
+      <div style={{ height: '440px', overflow: 'hidden' }}>
+        <img src="uploads/1_0.png" alt="Gruene Hall, Gruene, Texas" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }} />
+      </div>
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
         <div style={pagesStyles.pullQuote}>
@@ -24,6 +28,15 @@ const StoryPage = () => {
         <p style={pagesStyles.body}>
           What none of us expected was how much the place itself would matter. Gruene, with its legendary dance hall, its cypress-shaded river bends, and its unhurried pace, has a way of pulling the truth out of a song. You can't fake it there.
         </p>
+        {/* Workshop photos */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', margin: '40px 0' }}>
+          <div style={{ overflow: 'hidden', border: '3px solid #d4c4a8' }}>
+            <img src="uploads/1_2.png" alt="Evening session in Gruene" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+          <div style={{ overflow: 'hidden', border: '3px solid #d4c4a8' }}>
+            <img src="uploads/1_3.png" alt="Songwriting workshop by the water" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+        </div>
         <div style={{ width: '60px', height: '2px', background: '#8b2020', margin: '40px 0' }} />
         <h2 style={pagesStyles.h2}>The Community We've Built</h2>
         <p style={pagesStyles.body}>
@@ -32,6 +45,15 @@ const StoryPage = () => {
         <p style={pagesStyles.body}>
           Our group spans a range of styles, backgrounds, and goals. Neo-traditional country from the Fort Worth dancehalls. Red Dirt ballads from the Texas plains. Kansas folk. Nashville pop. Outlaw southern gothic. Indie Americana. We don't all sound the same. And that's exactly the point.
         </p>
+        {/* Community photos */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', margin: '40px 0' }}>
+          <div style={{ overflow: 'hidden', border: '3px solid #d4c4a8' }}>
+            <img src="uploads/1_4.png" alt="Group songwriting session" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+          <div style={{ overflow: 'hidden', border: '3px solid #d4c4a8' }}>
+            <img src="uploads/1_5.png" alt="Writers working through a song" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
+          </div>
+        </div>
         <p style={pagesStyles.body}>
           But we're united by a shared respect for the craft, and for each other. Gatherings like this are simply an extension of that spirit.
         </p>
