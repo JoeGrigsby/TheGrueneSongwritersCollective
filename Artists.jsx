@@ -73,7 +73,7 @@ const ARTIST_DATA = [
     featuredSong: 'Producer: 2026 Texas Hill Country Spring House Concert',
     website: null,
     links: {
-      spotify: 'https://thegruenesongwriterscollective.com/#artists',
+      spotify: 'https://open.spotify.com/artist/1NbcMdMPtyZM2sWPI5dwey',
       instagram: 'https://www.instagram.com/andreisimo/',
     },
   },
