@@ -184,7 +184,7 @@ const ArtistBioPage = ({ artist, onBack }) => {
             overflow: 'hidden',
           }}>{artist.photo ? <img src={artist.photo} alt={artist.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : artist.initials}</div>
           <div>
-            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Member · The Gruene Songwriters Collective</div>
+            <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '8px' }}>Member · The Gruene Songwriters Collective</div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(32px, 5vw, 52px)', margin: '0 0 8px', lineHeight: 1.1 }}>{artist.name}</h1>
             <div style={{ fontFamily: "'Oswald', sans-serif", color: '#c8a45a', fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>{artist.hometown}</div>
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -262,7 +262,7 @@ const ArtistsPage = ({ navigate, selectedArtistSlug }) => {
     <div style={{ background: '#1a1208', minHeight: '100vh', paddingTop: '72px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 32px' }}>
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#8b2020', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>The Roster</div>
+          <div style={{ fontFamily: "'Oswald', sans-serif", color: '#b84040', fontSize: '12px', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '12px' }}>The Roster</div>
           <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Meet the Artists</h1>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '24px' }}>
