@@ -11,10 +11,6 @@ const StoryPage = () => {
         <h1 style={{ fontFamily: "'Playfair Display', serif", color: '#f2ead8', fontSize: 'clamp(36px, 5vw, 64px)', margin: '0 0 16px' }}>Our Story</h1>
         <div style={{ color: '#c8a45a', letterSpacing: '0.25em', fontSize: '13px' }}>★ &nbsp; FROM THE HILLS OF GRUENE &nbsp; ★</div>
       </div>
-      {/* Gruene Hall hero photo */}
-      <div style={{ height: '440px', overflow: 'hidden' }}>
-        <img src="uploads/1_0.png" alt="Gruene Hall, Gruene, Texas" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom' }} />
-      </div>
       {/* Content */}
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 32px' }}>
         <div style={pagesStyles.pullQuote}>
@@ -51,7 +47,7 @@ const StoryPage = () => {
             <img src="uploads/1_4.png" alt="Group songwriting session" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
           </div>
           <div style={{ overflow: 'hidden', border: '3px solid #d4c4a8' }}>
-            <img src="uploads/1_5.png" alt="Writers working through a song" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center' }} />
+            <img src="uploads/1_5.png" alt="Writers working through a song" style={{ width: '100%', height: '320px', objectFit: 'cover', objectPosition: 'center top' }} />
           </div>
         </div>
         <p style={pagesStyles.body}>
