@@ -23,13 +23,42 @@ async function fetchPage(url) {
   const browser = await puppeteer.launch({
     headless: true,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--single-process'],
   });
   try {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+
+    // Bandsintown's React app fetches events via XHR to rest.bandsintown.com.
+    // Intercept that response to get clean JSON instead of scraping rendered HTML,
+    // which is unreliable because networkidle0 never fires on their analytics-heavy pages.
+    if (url.includes('bandsintown.com')) {
+      let capturedEvents = null;
+      page.on('response', async (response) => {
+        const reqUrl = response.url();
+        if (
+          reqUrl.includes('rest.bandsintown.com') &&
+          reqUrl.includes('/events') &&
+          response.status() === 200
+        ) {
+          try {
+            const json = await response.json();
+            if (Array.isArray(json) && json.length >= 0) capturedEvents = json;
+          } catch (_) {}
+        }
+      });
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      // Give the app time to fire its XHR requests and receive responses
+      await new Promise(r => setTimeout(r, 8000));
+      if (capturedEvents !== null) {
+        console.log(`  Captured ${capturedEvents.length} events via XHR interception`);
+        return JSON.stringify(capturedEvents, null, 2);
+      }
+      console.warn('  XHR interception found nothing — falling back to page HTML');
+      return await page.content();
+    }
+
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
-    // Extra wait for JS-heavy pages like Bandsintown to finish rendering
     await new Promise(r => setTimeout(r, 3000));
     return await page.content();
   } finally {

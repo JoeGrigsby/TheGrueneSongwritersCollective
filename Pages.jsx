@@ -105,9 +105,9 @@ const UPCOMING_EVENTS = [
     artist: 'Wesley Hanna',
     photo: 'uploads/wesley_hanna.png',
     date: 'Thursday, May 7, 2026',
-    time: '',
+    time: '8:30 PM',
     venue: 'Dosey Doe - The Big Barn',
-    venueUrl: 'https://wesleyhannamusic.com/',
+    venueUrl: 'https://www.bandsintown.com/a/13777778-wesley-hanna',
     location: 'The Woodlands, TX',
   },
 ];
